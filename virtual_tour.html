@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour</title>
+    <link rel="stylesheet" href="pannellum.css"/>
+    <script type="text/javascript" src="pannellum.js"></script>
+    <style>
+    #panorama {
+        width: 600px;
+        height: 400px;
+    }
+    </style>
+</head>
+<body>
+
+<div id="panorama"></div>
+<script>
+pannellum.viewer('panorama', {
+    "default": {
+        "firstScene": "precinct-kitchen",
+        "author": "Matthew Taylor",
+        "sceneFadeDuration": 1000
+    },
+
+    "scenes": {
+        "precinct-kitchen": {
+            "title": "Precinct Kitchen Ramp Divider",
+            "hfov": 110,
+            "pitch": -3,
+            "yaw": 117,
+            "type": "equirectangular",
+            "panorama": "precinct-kitchen.jpg",
+            "hotSpotDebug": true,
+            "hotSpots": [
+                {
+                    "pitch": -1.7901503349377297,
+                    "yaw": 73.81299314908057,
+                    "type": "scene",
+                    "text": "Precinct Kitchen Center Bench",
+                    "sceneId": "precinct_kitchen3",
+                    "targetYaw": -47.042118724768066,
+                    "targetPitch": -2.82899839954421
+                },
+                {
+                    "pitch": -0.79,
+                    "yaw": 102.3,
+                    "type": "scene",
+                    "text": "Precinct Kitchen Sink",
+                    "sceneId": "precinct_kitchen2",
+                    "targetYaw": 5.6,
+                    "targetPitch": -2.6
+                }
+            ]
+        },
+
+        "precinct_kitchen2": {
+            "title": "Precinct Kitchen Sink",
+            "hfov": 110,
+            "pitch": -3,
+            "yaw": 117,
+            "type": "equirectangular",
+            "panorama": "precinct_kitchen2.jpg",
+            "hotSpotDebug": true,
+            "hotSpots": [
+                {
+                    "pitch": 2.8,
+                    "yaw": 9.1,
+                    "type": "scene",
+                    "text": "Precinct Kitchen Ramp Divider",
+                    "sceneId": "precinct-kitchen",
+                    "targetYaw": 117,
+                    "targetPitch": -3
+                },
+                {
+                    "pitch": 2.35,
+                    "yaw": 45.2,
+                    "type": "scene",
+                    "text": "Precinct Kitchen Bench",
+                    "sceneId": "precinct_kitchen3",
+                    "targetYaw": -79,
+                    "targetPitch": -20
+                }
+            ]
+        },
+
+        "precinct_kitchen3": {
+            "title": "Precinct Kitchen Bench",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "precinct_kitchen3.jpg",
+            "hotSpotDebug": true,
+            "hotSpots": [
+                {
+                    "pitch": 1.9016234856073906,
+                    "yaw": 0.10235255003038102,
+                    "type": "scene",
+                    "text": "Precinct Kitchen Ramp Divider",
+                    "sceneId": "precinct-kitchen",
+                    "targetYaw": 117,
+                    "targetPitch": -3
+                },
+                {
+                    "pitch": -1.7212797753871014,
+                    "yaw": -111.1248115106002,
+                    "type": "scene",
+                    "text": "Precinct Kitchen Sink",
+                    "sceneId": "precinct_kitchen2",
+                    "targetYaw": 29.47530774273426,
+                    "targetPitch": -6.746924436483827
+                }
+            ]
+        }
+    }
+});
+</script>
+
+</body>
+</html>
