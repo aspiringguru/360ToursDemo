@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>title</title>
+  </head>
+  <body>
+    <div>value = </div><div id="test">0</div>
+    <script>
+    var playerSpriteX = 0;
+
+    window.onkeyup = function(e) {
+        var key = e.keyCode ? e.keyCode : e.which;
+      console.log("key = ", key)
+      //https://keycode.info/
+      //https://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes
+      //up arrow = 38
+      //down arrow = 4-
+      //left arrow = 37
+      //right arrow = 39
+      //spacebar = 32
+      //backspace = 8
+      //f = 70
+      //b = 66
+      //backspace = 8
+      //enter = 13
+
+      if (key == 38) {
+          playerSpriteX += 10;
+      }else if (key == 40) {
+          playerSpriteX -= 10;
+      }
+
+      document.getElementById('test').innerHTML = playerSpriteX;
+    }
+    </script>
+  </body>
+</html>

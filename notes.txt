@@ -3,3 +3,18 @@
 https://viromedia.com/
 
 https://aframe.io/
+
+
+git config --global user.email "bmatthewtaylor@gmail.com"
+git config --global user.name "aspiringguru"
+
+
+#list of keys pressed - combinations
+https://stackoverflow.com/questions/13640061/get-a-list-of-all-currently-pressed-keys-in-javascript
+
+#
+https://mobiforge.com/design-development/html5-mobile-web-device-orientation-events
+https://developer.mozilla.org/en-US/docs/Web/API/Detecting_device_orientation
+https://www.w3.org/TR/accelerometer/ #adopted?
+
+https://dorukeker.com/know-thy-gyroscope-and-js-part-i/
