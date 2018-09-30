@@ -27,3 +27,18 @@ mv precinct_kitchen2.JPG  precinct_kitchen2.jpg
 mv precinct_kitchen3.JPG  precinct_kitchen3.jpg
 mv precinct-kitchen.JPG  precinct-kitchen.jpg
 #nb: git bash on windows does not cope with capital filename changes well.
+
+#attempting to get large resolution images to work.
+#https://github.com/mpetroff/pannellum/issues/138
+sudo apt-get install hugin-tools python-pil
+
+python generate.py -n nona test.jpg
+
+python generate.py -n nona precinct-kitchen.jpg
+python generate.py -n nona .jpg
+python generate.py -n nona .jpg
+
+cd /var/www/html/
+sudo python /home/ubuntu/pannellum/utils/multires/generate.py -n nona precinct-kitchen.jpg
+
+#nb: prob should change owner of html dir or be creating these muti res in another dir 
