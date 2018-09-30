@@ -21,7 +21,7 @@ pannellum.viewer('panorama', {
     "hfov": 100.0,
     "type": "multires",
     "multiRes": {
-        "path": "/%l/%s%y_%x",
+        "path": "output/%l/%s%y_%x",
         "fallbackPath": "/fallback/%s",
         "extension": "jpg",
         "tileResolution": 512,
@@ -32,4 +32,10 @@ pannellum.viewer('panorama', {
 </script>
 
 </body>
+<!-- nb: need to use generate.py to create tiles,
+      copy files from output dir to html dir used by webserver
+      also copy the output/config.json into the json used by pallenium
+      adjust the path from output/config.json to suit each image
+      should be able to use this on multi image tours 
+-->
 </html>
