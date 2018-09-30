@@ -41,4 +41,69 @@ python generate.py -n nona .jpg
 cd /var/www/html/
 sudo python /home/ubuntu/pannellum/utils/multires/generate.py -n nona precinct-kitchen.jpg
 
-#nb: prob should change owner of html dir or be creating these muti res in another dir 
+#nb: prob should change owner of html dir or be creating these muti res in another dir
+
+
+#setup nginx with https
+#https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04
+
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+sudo apt-get install python-certbot-nginx
+
+#test nginx config file is valid
+sudo nginx -t
+
+#---------------------------------------
+sudo systemctl reload nginx
+sudo systemctl restart nginx
+
+sudo service nginx start
+sudo service nginx stop
+sudo service nginx restart
+
+service nginx status
+
+nginx -s reload
+#---------------------------------------
+certbot --version
+#sudo certbot --nginx -d example.com -d www.example.com
+sudo certbot --nginx -d bmatthewtaylor.duckdns.org -d www.bmatthewtaylor.duckdns.org
+
+
+Congratulations! You have successfully enabled
+https://bmatthewtaylor.duckdns.org
+and
+https://www.bmatthewtaylor.duckdns.org
+
+You should test your configuration at:
+https://www.ssllabs.com/ssltest/analyze.html?d=bmatthewtaylor.duckdns.org
+https://www.ssllabs.com/ssltest/analyze.html?d=www.bmatthewtaylor.duckdns.org
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+IMPORTANT NOTES:
+ - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/bmatthewtaylor.duckdns.org/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/bmatthewtaylor.duckdns.org/privkey.pem
+   Your cert will expire on 2018-12-29. To obtain a new or tweaked
+   version of this certificate in the future, simply run certbot again
+   with the "certonly" option. To non-interactively renew *all* of
+   your certificates, run "certbot renew"
+ - Your account credentials have been saved in your Certbot
+   configuration directory at /etc/letsencrypt. You should make a
+   secure backup of this folder now. This configuration directory will
+   also contain certificates and private keys obtained by Certbot so
+   making regular backups of this folder is ideal.
+
+
+#--------------------
+voice control example to change scenes
+
+https://codepen.io/BrandonCorlett/pen/weKLBJ?editors=1111
+git issue > https://github.com/mpetroff/pannellum/issues/406
+
+
+#preview - enable lightweight preview of scene before loading.
+https://jsfiddle.net/uso3tf07/
+git issue > https://github.com/mpetroff/pannellum/issues/636
