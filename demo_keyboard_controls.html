@@ -5,7 +5,8 @@
     <title>title</title>
   </head>
   <body>
-    <div>value = </div><div id="test">0</div>
+    <div>value = </div><div id="test">0</div><br>
+    <div>key = </div><div id="key">0</div>
     <script>
     var playerSpriteX = 0;
 
@@ -30,8 +31,8 @@
       }else if (key == 40) {
           playerSpriteX -= 10;
       }
-
       document.getElementById('test').innerHTML = playerSpriteX;
+      document.getElementById('key').innerHTML = key;
     }
     </script>
   </body>

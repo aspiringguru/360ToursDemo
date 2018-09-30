@@ -18,3 +18,12 @@ https://developer.mozilla.org/en-US/docs/Web/API/Detecting_device_orientation
 https://www.w3.org/TR/accelerometer/ #adopted?
 
 https://dorukeker.com/know-thy-gyroscope-and-js-part-i/
+
+
+
+rename -S .JPG .jpg *.JPG
+
+mv precinct_kitchen2.JPG  precinct_kitchen2.jpg
+mv precinct_kitchen3.JPG  precinct_kitchen3.jpg
+mv precinct-kitchen.JPG  precinct-kitchen.jpg
+#nb: git bash on windows does not cope with capital filename changes well.
