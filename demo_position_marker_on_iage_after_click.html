@@ -1,0 +1,108 @@
+<!--
+  https://jsfiddle.net/7hed6uxL/2/
+  https://stackoverflow.com/questions/32053687/how-to-load-image-on-canvas-and-put-markers-on-click
+-->
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>click add marker to image</title>
+  <meta name="description" content="bmt">
+  <meta name="author" content="bmt">
+
+</head>
+
+<body>
+  <p>Click on the map to place a marker</p>
+  <canvas id="Canvas" width="700" height="700"></canvas>
+  <script>
+    var canvas = document.getElementById('Canvas');
+    var context = canvas.getContext("2d");
+
+    // Map sprite
+    var mapSprite = new Image();
+    mapSprite.src = "images/snes-legend-of-zelda-link-to-the-past-8.jpg";
+
+    var Marker = function () {
+        this.Sprite = new Image();
+        this.Sprite.src = "images/map-marker-hi.png"
+        this.Width = 12;
+        this.Height = 20;
+        this.XPos = 0;
+        this.YPos = 0;
+    }
+
+    var Markers = new Array();
+
+    var mouseClicked = function (mouse) {
+        // Get corrent mouse coords
+        var rect = canvas.getBoundingClientRect();
+        var mouseXPos = (mouse.x - rect.left);
+        var mouseYPos = (mouse.y - rect.top);
+
+        console.log("Marker added");
+
+        // Move the marker when placed to a better location
+        var marker = new Marker();
+        marker.XPos = mouseXPos - (marker.Width / 2);
+        marker.YPos = mouseYPos - marker.Height;
+
+        Markers.push(marker);
+    }
+
+    // Add mouse click event listener to canvas
+    canvas.addEventListener("mousedown", mouseClicked, false);
+
+    var firstLoad = function () {
+        context.font = "15px Georgia";
+        context.textAlign = "center";
+    }
+
+    firstLoad();
+
+    var main = function () {
+        draw();
+    };
+
+    var draw = function () {
+        // Clear Canvas
+        context.fillStyle = "#000";
+        context.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Draw map
+        // Sprite, X location, Y location, Image width, Image height
+        // You can leave the image height and width off, if you do it will draw the image at default size
+        context.drawImage(mapSprite, 0, 0, 700, 700);
+
+        // Draw markers
+        console.log("Markers.length:"+Markers.length);
+        for (var i = 0; i < Markers.length; i++) {
+            var tempMarker = Markers[i];
+            // Draw marker
+            context.drawImage(tempMarker.Sprite, tempMarker.XPos, tempMarker.YPos, tempMarker.Width, tempMarker.Height);
+
+            // Calculate postion text
+            var markerText = "Position (X:" + tempMarker.XPos + ", Y:" + tempMarker.YPos +" )";
+            console.log("marker #"+i+" : "+markerText)
+
+            // Draw a simple box so you can see the position
+            //var textMeasurements = context.measureText(markerText);
+            //context.fillStyle = "#666";
+            //context.globalAlpha = 0.7;
+            //context.fillRect(tempMarker.XPos - (textMeasurements.width / 2), tempMarker.YPos - 15, textMeasurements.width, 20);
+            //context.globalAlpha = 1;
+
+            // Draw position above
+            //context.fillStyle = "#000";
+            //context.fillText(markerText, tempMarker.XPos, tempMarker.YPos);
+        }
+    };
+
+    //setInterval(main, (1000 / 60)); // Refresh 60 times a second
+    setInterval(main, (1000 / 0.5)); // Refresh 1 times a second
+  </script>
+</body>
+</html>

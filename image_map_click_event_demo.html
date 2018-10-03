@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>image demo</title>
+  <meta name="description" content="image demo">
+  <meta name="author" content="bmt">
+  <script src="jquery-3.3.1.js"></script>
+</head>
+
+<body>
+  <img src="images/planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap"/>
+
+  <map name="planetmap">
+      <area class="yellow" shape="rect" coords="0,0,82,126" href="" />
+      <area shape="circle" coords="90,58,3" href="" />
+      <area shape="circle" coords="124,58,8" href="" />
+  </map>
+
+  <script>
+    console.log("start")
+    $(".yellow").on("click", function(e){
+        console.log("yellow clicked")
+        alert("yellow clicked alert box!");
+        e.preventDefault();
+    });
+    $(".yellow").on("mouseover", function(e){
+        e.preventDefault();
+        alert("yellow mouseover alert box!");
+        console.log("yellow mouseover")
+    });
+    console.log("end")
+  </script>
+</body>
+</html>

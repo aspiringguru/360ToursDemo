@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Toggle Mockup</title>
+    <link rel="stylesheet" href="pannellum.css"/>
+    <script type="text/javascript" src="pannellum.js"></script>
+    <style>
+    #panorama {
+        width: 600px;
+        height: 400px;
+    }
+    #music-toggle {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        width: 26px;
+        height: 26px;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+<!-- &#9834; = music note symbol see https://emojipedia.org/eighth-note/ -->
+<div id="panorama"><div id="music-toggle" class="pnlm-controls">&#9834;</div></div>
+<script>
+viewer = pannellum.viewer('panorama', {
+    "panorama": "precinct-kitchen.jpg"
+});
+
+document.getElementById('music-toggle').addEventListener('click', function(e) {
+    alert('Music toggle pressed.')
+});
+</script>
+
+</body>
+</html>
